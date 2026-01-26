@@ -7,13 +7,10 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
-    message: "PAGE LOADED SUCESSFULLY",
+    message: "PAGE LOADED SUCCESSFULLY",
   });
 });
 
-app.listen(
-  (process.env.PORT,
-  () => {
-    console.log(`Server listening on :  http://localhost:${process.env.PORT}`);
-  }),
-);
+app.listen(process.env.PORT, () => {
+  console.log(`Server listening on :  http://localhost:${process.env.PORT}`);
+});
