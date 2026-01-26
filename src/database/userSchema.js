@@ -1,7 +1,8 @@
-import {Language} from "@mui/icons-material";
+import {Model} from "mongoose";
+import {Schema} from "mongoose";
 
 const {Schema} = mongoose;
-export const userSchema = new Schema(
+const userSchema = new Schema(
   {
     email: {type: String, required: true},
     verificaionToken: {type: Number, required: true},
@@ -642,3 +643,5 @@ export const userSchema = new Schema(
     timeStamps: true,
   },
 );
+
+export const User = mongoose.model("User", userSchema);
