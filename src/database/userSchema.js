@@ -1,7 +1,6 @@
-import {Model} from "mongoose";
+import mongoose, {Model} from "mongoose";
 import {Schema} from "mongoose";
 
-const {Schema} = mongoose;
 const userSchema = new Schema(
   {
     email: {type: String, required: true},
@@ -20,7 +19,11 @@ const userSchema = new Schema(
     account: {
       isEmailVerified: Boolean,
       isActive: Boolean,
-      role: {type: String, enum: [Student, Admin, Premium], default: Student},
+      role: {
+        type: String,
+        enum: ["Student", "Admin", "Premium"],
+        default: "Student",
+      },
       createdAt: {type: Date, default: Date.now},
       lastLogin: {type: Date},
       points: Number,
